@@ -69,17 +69,25 @@ console.log('hiii this is first day')
 
 
 
-const colors:string[]=['red','green','yellow','blue','pink']
+// const colors:string[]=['red','green','yellow','blue','pink']
 
 
-const findColorByName=(color:string,array:string[]):string | undefined =>{
+// const findColorByName=(color:string,array:string[]):string | undefined =>{
 
-  for(let col of array){
-    if(col===color){
-let findColor:string | undefined =col
-return findColor
-    }
-  }
-}
+//   for(let col of array){
+//     if(col===color){
+// let findColor:string | undefined =col
+// return findColor
+//     }
+//   }
+// }
 
-console.log(findColorByName('red',colors))
+// console.log(findColorByName('red',colors))
+
+
+let numbers=[1,2,3,4]
+// numbers.push('2')
+// numbers.push(2)
+
+// let value:string=numbers[0]
+let value:number=numbers[2]

@@ -1,6 +1,7 @@
 import './style.css'
 
-import './first'
+// import './first'
+import './second'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
