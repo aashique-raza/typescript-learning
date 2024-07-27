@@ -2,7 +2,8 @@ import './style.css'
 
 // import './first'
 // import './second'
-import './third'
+// import './third'
+import './fourth'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
