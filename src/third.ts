@@ -114,45 +114,45 @@
 // TIME to perform a task-------
 
 
-type Employee={
-    id:number,
-    name:string,
-    department:string
-}
+// type Employee={
+//     id:number,
+//     name:string,
+//     department:string
+// }
 
-type Manager={
-    id:number,
-    name:string,
-    employess:Employee[]
-}
-type Staff=Employee | Manager
+// type Manager={
+//     id:number,
+//     name:string,
+//     employess:Employee[]
+// }
+// type Staff=Employee | Manager
 
-function printStaffDetails(staff:Staff):string{
-
-
-    if('employess' in staff){
-        return `${staff.name} is manager and he has ${staff.employess.length} employe `
-    }else{
-        return `${staff.name} is an employee department of ${staff.department} `
-    }
-
-}
+// function printStaffDetails(staff:Staff):string{
 
 
-let jhon:Employee={
-    name:'jhon doe',
-    id:32,
-    department:'backedn developer'
-}
+//     if('employess' in staff){
+//         return `${staff.name} is manager and he has ${staff.employess.length} employe `
+//     }else{
+//         return `${staff.name} is an employee department of ${staff.department} `
+//     }
 
-let pop:Manager={
-    id:32,
-    name:'olli pop',
-    employess:[jhon]
-}
+// }
 
 
-const result = printStaffDetails(pop)
+// let jhon:Employee={
+//     name:'jhon doe',
+//     id:32,
+//     department:'backedn developer'
+// }
+
+// let pop:Manager={
+//     id:32,
+//     name:'olli pop',
+//     employess:[jhon]
+// }
+
+
+// const result = printStaffDetails(pop)
 // console.log(result)
 
 // intersection in typescript----
@@ -160,18 +160,18 @@ const result = printStaffDetails(pop)
 
 // ex--
 
-type Book={name:string,price:number,genre:string}
+// type Book={name:string,price:number,genre:string}
 
-const book1:Book={
-    name:'a girl in room 105',
-    price:20,
-    genre:'romance'
-}
-const book2:Book={
-    name:'min reading',
-    price:20,
-    genre:'physclogy'
-}
+// const book1:Book={
+//     name:'a girl in room 105',
+//     price:20,
+//     genre:'romance'
+// }
+// const book2:Book={
+//     name:'min reading',
+//     price:20,
+//     genre:'physclogy'
+// }
 
 // now we add one more property in book is discount how could we do--
 
@@ -206,20 +206,243 @@ const book2:Book={
 // }
 
 // one more way to do this--
-type Discounted=Book & {discount:number}
-const discountedBook:Discounted ={
-    name:'min reading',
-    price:20,
-    genre:'physclogy',
-    discount:0.12
-}
+// type Discounted=Book & {discount:number}
+// const discountedBook:Discounted ={
+//     name:'min reading',
+//     price:20,
+//     genre:'physclogy',
+//     discount:0.12
+// }
 
 // dynimically or computed use ----
 
-const propName='age'
+// const propName='age'
 
-type User={
-    [propName]:number
+// type User={
+//     [propName]:number
+// }
+
+// let Jhon={[propName]:'jhon doe'}
+
+// interfaces---------------------------------------------------------------------------------------------------------------------
+
+// interface Person {
+//     name:string,
+//     age:number
+// }
+
+// const person1:Person={
+//     name:"jhon",
+//     age:20
+// }
+
+// console.log(person1.name)
+
+// this is basic syntax of interface, remember one thing interfaces and type aliases are same except interfaces only work on object types
+
+// now see how extend key word use in interface----
+
+// interface Person {
+//     name:string,
+//     age:number,
+// }
+
+// interface Employe{
+//     department:string
+// }
+// now we know this Employe has also have name and age so instead this property write better approach is we we extedn those value form Person interface
+// interface Employe extends Person{
+//     department:string
+// }
+
+// const employe:Employe={
+//     name:"jhimi",
+//     age:29,
+//     department:'web developer'
+// }
+
+// console.log(employe.name)
+
+
+// now we see nested extend-----------
+
+
+// interface Person {
+//     name:string,
+//     age:number,
+// }
+
+// interface Employe extends Person{
+//     salary:number
+// }
+
+// interface Manager extends Employe{
+//         employees:Employe[]
+// }
+
+// const employe:Employe ={
+//     name:"jhon",
+//     age:45,
+//     salary:60000
+// }
+
+// // console.log(employe.salary)
+// const manager:Manager={
+//     name:"pop",
+//     age:67,
+//     salary:200000,
+//     employees:[employe]
+// }
+// console.log(manager.employees[0].name)
+
+
+// type CheckStaff=Manager | Employe
+
+// function addSalary(staff:CheckStaff):string{
+
+//     if('employees' in staff){
+//         staff.salary=300000
+//     }else{
+//         staff.salary=70000
+//     }
+
+//     return `${staff.name} congrats salary incremented succesffuly!  `
+// }
+
+// let incrementedPerson= addSalary(manager)
+// console.log(incrementedPerson)
+// console.log(manager.salary)
+
+
+// function addEmployeeOrSeeEmployees(staff:CheckStaff){
+
+//     if('employees' in staff){
+//              return  manager.employees.map((em)=>(em))
+//             }else{
+//                return  manager.employees.push(staff)
+//             }
+
+// }
+
+// const result=addEmployeeOrSeeEmployees(employe)
+// console.log(result)
+
+// now we see how to add method 
+
+// interface Person {
+//     name:string,
+//     age:number,
+//     greet:()=>void
+// }
+
+// interface Employe extends Person{
+//     salary:number,
+//     getSalary:(msg:string)=>string;
+// }
+
+// interface Manager extends Employe{
+//         employees:Employe[]
+// }
+
+// const employe:Employe ={
+//     name:"jhon",
+//     age:45,
+//     salary:60000,
+//     greet(){
+//         console.log(`hii ${this.name}`)
+//     },
+//     getSalary:(message:string)=>{
+//         return `${message} ${employe.salary}`
+//     }
+   
+// }
+
+// console.log(employe.salary)
+// const manager:Manager={
+//     name:"pop",
+//     age:67,
+//     salary:200000,
+//     employees:[employe],
+//     greet:function(){
+//         console.log(`hello ${this.name}`)
+//     },
+//      getSalary(message:string){
+//         return `${this.name} ${message} ${this.salary}`
+//     }
+// }
+
+// manager.greet()
+// employe.greet()
+// console.log(manager.getSalary('your salary is'))
+// console.log(employe.getSalary('your salary is'))
+
+// task ----------------------------------------------------
+
+// interface Computer{
+//   readonly  id:number,
+//     brand:string,
+//     storage?:string,
+//     ram:number,
+//     upgardeRam:(input:number)=>number
+// }
+
+// const dell:Computer={
+//     id:23,
+//     brand:"dell",
+//     ram:4,
+//     upgardeRam(ram:number){
+//         return  ram+4
+//     }
+// }
+
+// // console.log(dell.ram)
+// console.log(dell.upgardeRam(4))
+
+
+interface Person{
+    name:string
+}
+interface DogOwner extends Person{
+    dogName:string
 }
 
-let Jhon={[propName]:'jhon doe'}
+interface Manager extends Person{
+managePeople:()=>void,
+delegentTask:()=>void
+}
+
+const person:Person={
+    name:"jhon"
+}
+const dogOwner:DogOwner={
+    name:"jhone",
+    dogName:"petty"
+}
+const manager:Manager={
+    name:"pop",
+    managePeople(){
+        console.log('managing people.....')
+    },
+    delegentTask(){
+        console.log('task is working mode.....')
+    }
+}
+
+
+
+// function getEmployee():Person{
+//     let randomNumber = Math.random() * 1;
+// let fixedNum = randomNumber.toFixed(2); // fixedNum is a string
+// let fixedNumAsNumber = parseFloat(fixedNum); // convert to number
+
+// if (fixedNumAsNumber < 0.33) {
+//     return person; // Assuming person is defined somewhere in your code
+// }else if(fixedNumAsNumber <0.66){
+//     return dogOwner
+// }else{
+//    return manager
+// }
+
+// }
+
+// console.log(getEmployee())
