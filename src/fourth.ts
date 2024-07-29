@@ -78,7 +78,7 @@ const fixedTuples:[number,string]=[87,'jhon']
 
 // destructuring tuples------
 
-const person:[name:string,age:number,city:string]=['jhon doe',56,'london']
+ const person:[name:string,age:number,city:string]=['jhon doe',56,'london']
 
 let personName:string=person[0]
 // console.log(personName)
