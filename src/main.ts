@@ -5,11 +5,11 @@ import './style.css'
 // import './third'
 // import './fourth'
 // import './fifth'
-import './generics'
+// import './generics'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-   hello typescript learning start day 1
+  <a href='/task'>task</a>
   </div>
 `
 
