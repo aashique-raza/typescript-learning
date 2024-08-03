@@ -77,9 +77,9 @@
 
 // console.log(printArray<number>([1,2,3,4,56,8]))
 
-function printArray<T>(arg:T[]):T{
-    return arg[0]
-}
+// function printArray<T>(arg:T[]):T{
+//     return arg[0]
+// }
 
 // console.log(printArray([1,2,3,4,56,8]))
 // console.log(printArray(['hello','hiii']))
@@ -153,31 +153,31 @@ function printArray<T>(arg:T[]):T{
 
 // generics in classes-------
 
-class Person<T,U>{
-    name:T
-    age:U
-    constructor(name:T,age:U){
-        this.name=name
-        this.age=age
-    }
+// class Person<T,U>{
+//     name:T
+//     age:U
+//     constructor(name:T,age:U){
+//         this.name=name
+//         this.age=age
+//     }
 
-    getInfo(){
-        return `he is ${this.name} and his age is ${this.age}`
-    }
+//     getInfo(){
+//         return `he is ${this.name} and his age is ${this.age}`
+//     }
 
-   setName(name:T){
-    this.name=name
-   }
-    sayHii<T>(arg:T):void{
-    console.log(`hiii ${arg}`)
-    }
-}
+//    setName(name:T){
+//     this.name=name
+//    }
+//     sayHii<T>(arg:T):void{
+//     console.log(`hiii ${arg}`)
+//     }
+// }
 
-const person=new Person<string,number>('peter',25)
+// const person=new Person<string,number>('peter',25)
 // console.log(person)
 // console.log(person.name)
 
 // console.log(person.getInfo())
 // console.log(person.sayHii('peter'))
-person.setName('poll')
-console.log(person)
+// person.setName('poll')
+// console.log(person)

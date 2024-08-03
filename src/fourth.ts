@@ -1,13 +1,13 @@
-enum Days{
-    sunday,
-    monday,
-    tuesday,
-    wednesday,
-    tharusday,
-    friday,
-    saturday,
+// enum Days{
+//     sunday,
+//     monday,
+//     tuesday,
+//     wednesday,
+//     tharusday,
+//     friday,
+//     saturday,
 
-}
+// }
 
 // console.log(Days.friday)
 
@@ -17,29 +17,29 @@ enum Days{
 // Days.friday='sda' this is throwing an error ---
 
 
-enum Directions{
-    North='North',
-    South='South',
-    West='West',
-    East="East"
-}
+// enum Directions{
+//     North='North',
+//     South='South',
+//     West='West',
+//     East="East"
+// }
 
 // console.log(Directions.North)
 // console.log(Directions[0])
 
-console.log(Directions.North)
+// console.log(Directions.North)
 // console.log(Directions[0]) it is throwing an error-----
 
-enum ServerResponse{
-    Success=200,
-    Error=400,
-    Pending='Pending'
-}
+// enum ServerResponse{
+//     Success=200,
+//     Error=400,
+//     Pending='Pending'
+// }
 
-interface REsponseStatus{
-    data:string[],
-    result:ServerResponse
-}
+// interface REsponseStatus{
+//     data:string[],
+//     result:ServerResponse
+// }
 
 // const getData=():REsponseStatus=>{
 
@@ -60,11 +60,11 @@ interface REsponseStatus{
 
 // tuples------------------------------------------------------------------------------------------
 
-let ourTuple:[number,string]=[3,'hello']
+// let ourTuple:[number,string]=[3,'hello']
 
-// named tuple
+// // named tuple
 
-const graph:[x:number,y:number]=[60.4,49.5]
+// const graph:[x:number,y:number]=[60.4,49.5]
 
 // try to order chnage ----
 
@@ -73,54 +73,54 @@ const graph:[x:number,y:number]=[60.4,49.5]
 
 // try to add new indexes over predifined indexs-----
 
-const fixedTuples:[number,string]=[87,'jhon']
+// const fixedTuples:[number,string]=[87,'jhon']
 // const fixedTuples:[number,string]=[87,'jhon',45] it will throw an error------
 
 // destructuring tuples------
 
- const person:[name:string,age:number,city:string]=['jhon doe',56,'london']
+//  const person:[name:string,age:number,city:string]=['jhon doe',56,'london']
 
-let personName:string=person[0]
+// let personName:string=person[0]
 // console.log(personName)
 
-let personAge:number=person[1]
+// let personAge:number=person[1]
 // console.log(personAge)
 
 
-type Hook={
-    name:string,
-    setName:()=>void
-}
+// type Hook={
+//     name:string,
+//     setName:()=>void
+// }
 
 
 // task----
 
-enum userRole{
-    Members,
-    Admin,
-    Manager,
-    Employee
-}
+// enum userRole{
+//     Members,
+//     Admin,
+//     Manager,
+//     Employee
+// }
 
 
 
-type User={
-    id:number,
-    name:string,
-    role:userRole,
-    contact:[email:string,mobile:number]
-}
+// type User={
+//     id:number,
+//     name:string,
+//     role:userRole,
+//     contact:[email:string,mobile:number]
+// }
 
-const user1:User={
-    id:987,
-    name:'jhon',
-    role:userRole.Employee,
-    contact:['user1@gmail.com',8767878990]
-}
+// const user1:User={
+//     id:987,
+//     name:'jhon',
+//     role:userRole.Employee,
+//     contact:['user1@gmail.com',8767878990]
+// }
 
-function createUser(user:User):User{
-return user
-}
+// function createUser(user:User):User{
+// return user
+// }
 
 
 // console.log(createUser(user1))

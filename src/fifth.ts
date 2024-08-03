@@ -50,52 +50,52 @@
 // import {value} from './file.js'
 
 
-type Dog={
-    type:'dog',
-    name:string,
-    bark:()=>void
-}
+// type Dog={
+//     type:'dog',
+//     name:string,
+//     bark:()=>void
+// }
 
-type Cat={
-    type:'cat',
-    name:string,
-    meow:()=>void
-}
+// type Cat={
+//     type:'cat',
+//     name:string,
+//     meow:()=>void
+// }
 
-type Animal=Dog | Cat
+// type Animal=Dog | Cat
 
-const cat:Cat={
-    type:'cat',
-    name:'pissy',
-    meow(){
-        console.log('meoww')
-    }
-}
-const dog:Dog={
-    type:'dog',
-    name:'pissy',
-    bark(){
-        console.log('barking')
-    }
-}
+// const cat:Cat={
+//     type:'cat',
+//     name:'pissy',
+//     meow(){
+//         console.log('meoww')
+//     }
+// }
+// const dog:Dog={
+//     type:'dog',
+//     name:'pissy',
+//     bark(){
+//         console.log('barking')
+//     }
+// }
 
 
-function makeSOund(animal:Animal){
+// function makeSOund(animal:Animal){
 
-    if(animal.type==='cat'){
-        animal.meow()
-    }else{
-        animal.bark()
-    }
+//     if(animal.type==='cat'){
+//         animal.meow()
+//     }else{
+//         animal.bark()
+//     }
 
-}
+// }
 
 // makeSOund(cat)
-makeSOund({
-    type:'cat',
-    name:'tiyal',
-    meow(){
-        console.log('meow kr rha hai')
-    }
-})
+// makeSOund({
+//     type:'cat',
+//     name:'tiyal',
+//     meow(){
+//         console.log('meow kr rha hai')
+//     }
+// })
 

@@ -3,7 +3,7 @@ const formEl = document.querySelector<HTMLFormElement>(
   ".form"
 ) as HTMLFormElement;
 const taskListContainerEl = document.querySelector(".task-list-container")!;
-const taskItemEL = document.querySelector(".task-item")!;
+// const taskItemEL = document.querySelector(".task-item")!;
 const taskInputEl = document.querySelector("#task-input") as HTMLInputElement;
 
 type Task = {

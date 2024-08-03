@@ -1,4 +1,4 @@
-console.log('hiii this is first day')
+// console.log('hiii this is first day')
 
 // interface someObj{
 //     value:string;
@@ -85,9 +85,9 @@ console.log('hiii this is first day')
 // console.log(findColorByName('red',colors))
 
 
-let numbers=[1,2,3,4]
+// let numbers=[1,2,3,4]
 // numbers.push('2')
 // numbers.push(2)
 
 // let value:string=numbers[0]
-let value:number=numbers[2]
+// let value:number=numbers[2]

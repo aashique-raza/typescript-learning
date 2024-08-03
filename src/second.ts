@@ -1,9 +1,9 @@
 // object and functions____________________________________________________________________________________________________________
 
 
-let car={brand:'toyota',year:2000}
+// let car={brand:'toyota',year:2000}
 
-let bike:{brand:string,year:number}={brand:'tvs',year:2014}
+// let bike:{brand:string,year:number}={brand:'tvs',year:2014}
 
 // first is implicitly type and second is explicit type,
 
@@ -143,21 +143,21 @@ let bike:{brand:string,year:number}={brand:'tvs',year:2014}
 // console.log(students)
 
 
-function processData(input:string | number,config:{reverse:boolean}={reverse:false}){
+// function processData(input:string | number,config:{reverse:boolean}={reverse:false}){
 
-    if(typeof input ==='number' ){
-        return input*input
-    }
-    else{
-        return config.reverse? input.toUpperCase().split('').reverse().join(''):input
-    }
+//     if(typeof input ==='number' ){
+//         return input*input
+//     }
+//     else{
+//         return config.reverse? input.toUpperCase().split('').reverse().join(''):input
+//     }
 
-}
+// }
 
 // const result=processData(2,{"reverse":false})
-const result=processData('hello',{reverse:true})
+// const result=processData('hello',{reverse:true})
 
-console.log(result)
+// console.log(result)
 
 
 
