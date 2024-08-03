@@ -12,7 +12,12 @@ type Task = {
   id: string;
 };
 
-let allTask: Task[] = [];
+function getTAsks(){
+    const tasks=localStorage.getItem('tasks')
+    return tasks ? JSON.parse(tasks) : []
+}
+
+let allTask: Task[] = getTAsks();
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -31,6 +36,7 @@ formEl.addEventListener("submit", (e) => {
 
 function addTask(task: Task) {
   allTask.push(task);
+  localStorage.setItem('tasks',JSON.stringify(allTask))
 }
 
 
@@ -41,6 +47,7 @@ function handleCompleted(id: string) {
   
     if (taskIndex !== -1) {
       allTask[taskIndex].isCompleted = !allTask[taskIndex].isCompleted;
+      localStorage.setItem('tasks',JSON.stringify(allTask))
     //   console.log('Updated task', allTask[taskIndex]);
     } else {
     //   console.error('Task not found');
@@ -49,11 +56,12 @@ function handleCompleted(id: string) {
 
   function handleDelete(id:string){
    allTask= allTask.filter((task)=>task.id!==id)
+   localStorage.setItem('tasks',JSON.stringify(allTask))
     renderTasks()
   }
   
   function handleEdit(id: string) {
-    console.log(`Editing task with ID: ${id}`);
+    // console.log(`Editing task with ID: ${id}`);
   
     const li = document.querySelector(`li[data-id="${id}"]`) as HTMLElement;
   
@@ -68,23 +76,28 @@ function handleCompleted(id: string) {
         if (p && editIcon) {
           // Create input element with the current task text
           const input = document.createElement('input');
+          input.classList.add('edit-input')
           input.type = 'text';
           input.value = task.task;
+
   
           // Create save button
           const saveButton = document.createElement('button');
+          saveButton.classList.add('save-btn')
           saveButton.textContent = 'Save';
   
           // Replace the whole content of li with the new elements
           li.innerHTML = ''; // Clear current content
-          li.appendChild(input);
           li.appendChild(createCheckbox(task.isCompleted));
+          li.appendChild(input);
+          
           li.appendChild(createIcons(saveButton));
   
           // Handle save button click
           saveButton.addEventListener('click', () => {
             handleSave(id, input.value);
           });
+        
         }
       } else {
         console.error('Task not found');
@@ -120,7 +133,7 @@ function handleCompleted(id: string) {
     if (taskIndex !== -1) {
       allTask[taskIndex].task = newTaskText;
       console.log('Updated task', allTask[taskIndex]);
-  
+      localStorage.setItem('tasks',JSON.stringify(allTask))
       // Re-render the tasks to reflect the changes
       renderTasks();
     } else {
@@ -185,4 +198,7 @@ function renderTasks() {
       taskListContainerEl.appendChild(li);
     });
   }
+
+
+  renderTasks()
   

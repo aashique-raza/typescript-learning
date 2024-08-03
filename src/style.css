@@ -43,6 +43,27 @@ form input:first-child{
   border: none;
   background-color: rgb(224, 224, 224)
 }
+.edit-input{
+  padding: 7px 5px;
+  outline: none;
+  min-width: 200px;
+  max-width: 250px;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  color: rgb(3, 86, 117);
+  margin-left: 5px;
+}
+
+.save-btn{
+  background-color: red;
+  color: white;
+  padding: 7px 10px;
+  font-size: 12px;
+  text-transform: lowercase;
+  font-weight: 700;
+  outline: none;
+  border: none;
+}
 
 form button[type="submit"]{
   border: none;
@@ -88,6 +109,7 @@ cursor: pointer;
   margin-left: auto;
   display:flex;
   gap: 10px;
+  align-items: center;
 }
 
 .task-item  h3 .fa-trash{
